@@ -5,4 +5,9 @@ def create_app(settings=None):
     app = Flask(__name__)
 
     app.register_blueprint(api_bp, url_prefix='/api')
+    
+    @app.route('/')
+    def home():
+        return 'ok'
+    
     return app
